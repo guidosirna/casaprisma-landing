@@ -1,94 +1,36 @@
 import React from 'react';
-import { MapPin, Sun, Volume2, Layers, Coffee, Sparkles } from 'lucide-react';
+import { MapPin, Sun, Volume2, Layers, Coffee, Wifi } from 'lucide-react';
 
 const Benefits: React.FC = () => {
   const benefits = [
-    {
-      icon: MapPin,
-      title: 'Gràcia Nova',
-      description: 'En el corazón bohemio de Barcelona, con metro y conexiones perfectas',
-      color: 'bg-red-500'
-    },
-    {
-      icon: Sun,
-      title: 'Luz Natural',
-      description: 'Grandes ventanales que inundan el espacio de inspiración todo el día',
-      color: 'bg-yellow-500'
-    },
-    {
-      icon: Volume2,
-      title: 'Sonido Pro',
-      description: 'Equipamiento profesional para grabaciones y producciones audiovisuales',
-      color: 'bg-purple-500'
-    },
-    {
-      icon: Layers,
-      title: 'Totalmente Flexible',
-      description: 'Se transforma según tu proyecto: cowork, galería, estudio o evento',
-      color: 'bg-blue-500'
-    },
-    {
-      icon: Coffee,
-      title: 'Coffee Corner',
-      description: 'Cocina equipada y zona de descanso para que te sientas como en casa',
-      color: 'bg-orange-500'
-    },
-    {
-      icon: Sparkles,
-      title: 'Vibe Creativo',
-      description: 'Diseñado para inspirar, colaborar y crear conexiones auténticas',
-      color: 'bg-green-500'
-    }
+    { icon: MapPin, title: 'Gràcia, Barcelona', description: 'Ubicación privilegiada en el barrio más creativo de Barcelona.', color: 'bg-prisma-teal' },
+    { icon: Sun, title: 'Luz natural', description: 'Ventanales amplios que inundan los 175m² de luz natural.', color: 'bg-prisma-amber' },
+    { icon: Volume2, title: 'Equipamiento pro', description: 'Sonido profesional e iluminación técnica de alta calidad.', color: 'bg-prisma-navy' },
+    { icon: Layers, title: 'Espacio flexible', description: 'Se transforma según tu proyecto: estudio, galería, cowork o eventos.', color: 'bg-prisma-olive' },
+    { icon: Coffee, title: 'Coffee corner', description: 'Cocina equipada y zona de descanso para largas jornadas.', color: 'bg-prisma-amber' },
+    { icon: Wifi, title: 'WiFi alta velocidad', description: 'Fibra óptica para videollamadas y trabajo remoto sin cortes.', color: 'bg-prisma-teal' },
   ];
 
   return (
-    <section className="py-24 bg-gray-50 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-20 w-32 h-32 border-2 border-gray-400 rounded-full"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-gray-400 rounded-full"></div>
-        <div className="absolute bottom-32 left-1/3 w-16 h-16 border-2 border-gray-400 rotate-45"></div>
-      </div>
+    <section className="h-full bg-gray-50 flex items-center">
+      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-24 w-full">
+        <h2 className="reveal text-display-lg text-prisma-charcoal mb-8 lg:mb-16 max-w-2xl">
+          Por qué elegir Casa Prisma
+        </h2>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            ¿POR QUÉ
-            <span className="block text-green-500 italic font-light">Casa Prisma?</span>
-          </h2>
-          <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto font-light">
-            Un espacio donde cada detalle está pensado para potenciar tu creatividad y hacer realidad tus proyectos más ambiciosos
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 lg:gap-10">
           {benefits.map((benefit, index) => {
-            const IconComponent = benefit.icon;
+            const Icon = benefit.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-4 overflow-hidden"
+                className={`reveal reveal-delay-${Math.min(index + 1, 4)} group`}
               >
-                {/* Background Color Splash */}
-                <div className={`absolute top-0 right-0 w-20 h-20 ${benefit.color} rounded-full transform translate-x-8 -translate-y-8 opacity-10 group-hover:opacity-20 group-hover:scale-150 transition-all duration-500`}></div>
-                
-                <div className="relative z-10">
-                  <div className={`w-16 h-16 ${benefit.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    <IconComponent className="w-8 h-8 text-white" />
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {benefit.description}
-                  </p>
+                <div className={`w-10 h-10 lg:w-14 lg:h-14 ${benefit.color} rounded-xl lg:rounded-2xl flex items-center justify-center mb-3 lg:mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                  <Icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                 </div>
-
-                {/* Hover Border Effect */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-green-500 rounded-2xl transition-all duration-300"></div>
+                <h3 className="font-display font-bold text-prisma-charcoal text-base lg:text-xl mb-1 lg:mb-2">{benefit.title}</h3>
+                <p className="text-gray-500 text-sm lg:text-base leading-relaxed">{benefit.description}</p>
               </div>
             );
           })}

@@ -1,66 +1,60 @@
 import React from 'react';
-import { Star } from 'lucide-react';
-import type { Testimonial } from '../types';
 
 const Testimonials: React.FC = () => {
-  const testimonials: Testimonial[] = [
+  const testimonials = [
     {
-      name: 'Marina Rodríguez',
+      name: 'Laia Puig',
       role: 'Artista Visual',
-      content: 'Espacio Lumen fue perfecto para mi exhibición. Los 175m² con luz natural y diseño minimalista crearon el ambiente ideal para mostrar mi obra.',
-      avatar: '/1302974661.webp'
+      content: 'Casa Prisma va ser l\'espai perfecte per la meva exposició. Els 175m² amb llum natural van crear l\'ambient ideal per mostrar la meva obra.',
+      color: 'bg-prisma-navy',
     },
     {
-      name: 'Carlos Mendoza',
+      name: 'Marc Solé',
       role: 'Director Creativo',
-      content: 'Versátil, elegante y muy bien ubicado en Gràcia. Ideal para nuestros workshops creativos. El equipo quedó encantado con las facilidades.',
-      avatar: '/1302974711.webp'
+      content: 'Versátil, elegante y muy bien ubicado en Gràcia. Ideal para nuestros workshops creativos y sesiones fotográficas.',
+      color: 'bg-prisma-amber',
     },
     {
-      name: 'Elena Vásquez',
+      name: 'Anna Ferrer',
       role: 'Productora Musical',
-      content: 'El estudio de sonido es excepcional. Grabamos nuestro EP en un ambiente que realmente inspiró nuestra creatividad. Volveremos sin duda.',
-      avatar: '/1302974676.webp'
-    }
+      content: 'El equipamiento de sonido es excepcional. Grabamos nuestro EP en un ambiente que inspiró nuestra creatividad.',
+      color: 'bg-prisma-teal',
+    },
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-4">
-            Lo que dicen nuestros clientes
-          </h2>
-          <p className="text-xl text-gray-600">
-            Experiencias reales de creativos como tú
+    <section className="h-full bg-white flex flex-col">
+      <div className="max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-8 lg:pb-12 w-full flex flex-col flex-1 justify-center">
+        <div className="mb-6 lg:mb-10">
+          <p className="reveal font-display text-2xl lg:text-4xl xl:text-5xl text-prisma-charcoal max-w-5xl leading-snug lg:leading-tight font-bold">
+            &ldquo;{testimonials[0].content}&rdquo;
           </p>
+          <div className="reveal reveal-delay-1 flex items-center gap-4 mt-5 lg:mt-6">
+            <div className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full ${testimonials[0].color} flex items-center justify-center text-white font-bold text-base lg:text-lg`}>
+              {testimonials[0].name.charAt(0)}
+            </div>
+            <div>
+              <p className="font-display font-bold text-prisma-charcoal text-base lg:text-lg">{testimonials[0].name}</p>
+              <p className="text-gray-400 text-sm">{testimonials[0].role}</p>
+            </div>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-            >
-              <div className="flex items-center gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-green-500 text-green-500" />
-                ))}
-              </div>
-              
-              <p className="text-gray-700 mb-6 leading-relaxed italic">
-                "{testimonial.content}"
+        <div className="w-full h-px bg-gray-200 mb-6 lg:mb-10" />
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-20">
+          {testimonials.slice(1).map((t, index) => (
+            <div key={index} className={`reveal reveal-delay-${index + 2}`}>
+              <p className="font-display text-lg lg:text-2xl text-prisma-charcoal font-medium leading-snug mb-4 lg:mb-6">
+                &ldquo;{t.content}&rdquo;
               </p>
-              
-              <div className="flex items-center gap-4">
-                <img
-                  src={testimonial.avatar}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+              <div className="flex items-center gap-3">
+                <div className={`w-9 h-9 lg:w-10 lg:h-10 rounded-full ${t.color} flex items-center justify-center text-white font-bold text-sm`}>
+                  {t.name.charAt(0)}
+                </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <p className="font-bold text-prisma-charcoal text-sm lg:text-base">{t.name}</p>
+                  <p className="text-gray-400 text-xs lg:text-sm">{t.role}</p>
                 </div>
               </div>
             </div>

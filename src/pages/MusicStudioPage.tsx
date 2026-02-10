@@ -3,176 +3,95 @@ import { ArrowRight, Music, Mic, Headphones, Volume2, Radio, Zap } from 'lucide-
 import SEOHead from '../components/SEOHead';
 import ContactForm from '../components/ContactForm';
 
-const MusicStudioPage: React.FC = () => {
-  const scrollToContact = () => {
-    const contactForm = document.getElementById('contact-form');
-    contactForm?.scrollIntoView({ behavior: 'smooth' });
-  };
+const features = [
+  { icon: Mic, title: 'Microfonía Premium', desc: 'Micrófonos de condensador y dinámicos de alta gama para capturar voces e instrumentos con claridad.', color: 'bg-prisma-purple' },
+  { icon: Headphones, title: 'Monitoreo Profesional', desc: 'Auriculares y monitores de estudio de referencia para mezcla y masterización precisa.', color: 'bg-prisma-amber' },
+  { icon: Volume2, title: 'Sistema de Sonido', desc: 'Amplificadores y altavoces de alta fidelidad para reproducción y ensayos con sonido envolvente.', color: 'bg-prisma-navy' },
+  { icon: Radio, title: 'Mesa de Mezclas', desc: 'Consola digital con múltiples canales, efectos integrados y conectividad completa.', color: 'bg-prisma-olive' },
+  { icon: Music, title: 'Instrumentos', desc: 'Piano digital, amplificadores de guitarra y percusión básica disponibles para tus sesiones.', color: 'bg-prisma-teal' },
+  { icon: Zap, title: 'Software DAW', desc: 'Estaciones de trabajo digital con software profesional para grabación, edición y producción.', color: 'bg-prisma-purple' },
+];
 
+const services = [
+  { title: 'Grabación', desc: 'Sesiones de grabación para solistas, bandas y proyectos musicales.', items: ['Grabación multipista', 'Voces e instrumentos', 'Técnico de sonido incluido', 'Archivos en alta calidad'] },
+  { title: 'Producción', desc: 'Servicios completos de producción musical y post-producción.', items: ['Mezcla profesional', 'Masterización', 'Arreglos musicales', 'Asesoramiento creativo'] },
+  { title: 'Ensayos', desc: 'Espacio acondicionado para ensayos de bandas y músicos.', items: ['Amplificadores disponibles', 'Batería básica', 'Sistema de monitoreo', 'Horarios flexibles'] },
+  { title: 'Podcasts', desc: 'Grabación profesional de podcasts y contenido de audio.', items: ['Micrófonos de calidad', 'Tratamiento acústico', 'Edición incluida', 'Formatos de distribución'] },
+];
+
+const MusicStudioPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Estudio Musical Barcelona - Casa Prisma Gràcia | Grabación Profesional"
-        description="Alquila estudio musical profesional en Gràcia, Barcelona. Loft de 175m² con equipamiento de sonido profesional, grabación multipista y producción musical. Sala de ensayo y estudio de grabación completo."
-        keywords="estudio musical Barcelona, grabación Barcelona, producción musical Gràcia, estudio sonido Barcelona, alquiler estudio musical, sala ensayo Barcelona, estudio grabación Barcelona, producción musical Barcelona, alquiler sala ensayo, estudio sonido profesional, grabación profesional Barcelona, mixing mastering Barcelona, estudio podcast Barcelona, sala música Barcelona, alquiler estudio sonido, recording studio Barcelona, music production Barcelona, rehearsal room Barcelona, sound studio rental, audio recording Barcelona, music studio rental Barcelona, professional recording Barcelona, band rehearsal Barcelona, music production space"
+        title="Estudio Musical Barcelona — Grabación y Producción Gràcia | Casa Prisma"
+        description="Alquiler de estudio musical profesional en Gràcia, Barcelona. Espacio de 175m² con equipamiento de sonido profesional, grabación multipista y producción musical. Sala de ensayo, estudio de grabación y producción completo para músicos, bandas y productores."
+        keywords="estudio grabación barcelona, producción musical barcelona, sala ensayo barcelona, estudio sonido gràcia, alquiler estudio musical, grabación profesional barcelona, mezcla mastering barcelona, estudio música gràcia, sala música barcelona, recording studio barcelona, music production barcelona, alquiler sala ensayo barcelona, estudio podcast barcelona, grabación multipista barcelona, productor musical barcelona, estudio audio profesional, sala grabación gràcia, estudio sonido barcelona, músicos barcelona estudio, banda ensayo barcelona"
         canonical="https://casaprisma.com/estudio-musical"
-        ogImage="/1302974661.webp"
+        ogImage="/concierto-intimo.jpg"
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/1302974661.webp"
-            alt="Estudio musical profesional en Gràcia"
-            className="w-full h-full object-cover opacity-70"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-purple-900/30"></div>
-        </div>
-
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none">
-            ESTUDIO
-            <span className="block text-purple-400 italic font-light">Musical</span>
-          </h1>
-          
-          <p className="text-xl md:text-3xl font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-            Graba tu próximo <span className="text-purple-400 font-medium">hit</span> en Gràcia
-          </p>
-
-          <button
-            onClick={scrollToContact}
-            className="bg-purple-500 text-white px-10 py-4 rounded-none font-bold text-lg hover:bg-purple-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-          >
-            RESERVA TU SESIÓN
-          </button>
+      {/* Hero */}
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
+        <img src="/concierto-intimo.jpg" alt="Concierto íntimo en Casa Prisma Gràcia Barcelona — sala para música en vivo y grabación" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-prisma-purple/90 via-prisma-purple/40 to-transparent" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
+          <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Estudio musical</span>
+          <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">Graba y Produce</h1>
+          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-lg">Estudio profesional de 175m² con equipamiento de alta calidad para grabación, producción y ensayos en el corazón de Gràcia.</p>
+          <a href="#contact-form" className="group inline-flex items-center gap-3 bg-white text-prisma-purple px-8 py-4 rounded-full font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+            Reserva tu sesión <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </section>
 
-      {/* Equipment Section */}
+      {/* Features */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              EQUIPAMIENTO
-              <span className="block text-purple-500 italic font-light">profesional</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Equipamiento profesional para crear música de calidad
-            </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-14">
+            <span className="inline-block bg-prisma-purple/10 text-prisma-purple text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Equipamiento profesional</span>
+            <h2 className="text-display-lg text-prisma-charcoal max-w-xl">Tu estudio completo</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Mic className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Microfonía Premium</h3>
-              <p className="text-gray-600">Micrófonos de condensador y dinámicos para voces e instrumentos.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Headphones className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Monitoreo Profesional</h3>
-              <p className="text-gray-600">Auriculares y monitores de estudio para mezcla y masterización.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Volume2 className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Sistema de Sonido</h3>
-              <p className="text-gray-600">Amplificadores y altavoces de alta fidelidad para reproducción.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Radio className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Mesa de Mezclas</h3>
-              <p className="text-gray-600">Consola digital con múltiples canales y efectos integrados.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Music className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Instrumentos</h3>
-              <p className="text-gray-600">Piano digital, amplificadores de guitarra y percusión básica.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Zap className="w-12 h-12 text-purple-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Software DAW</h3>
-              <p className="text-gray-600">Estaciones de trabajo digital para grabación y producción.</p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={scrollToContact}
-              className="inline-flex items-center gap-3 bg-purple-500 text-white px-10 py-4 rounded-none font-bold text-lg hover:bg-purple-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-            >
-              RESERVA TU ESTUDIO AHORA
-              <ArrowRight className="w-5 h-5" />
-            </button>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <div key={i} className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                  <div className={`w-12 h-12 ${f.color} rounded-full flex items-center justify-center mb-5`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-prisma-charcoal text-lg mb-2">{f.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-24 bg-purple-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black mb-12">SERVICIOS MUSICALES</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-purple-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">GRABACIÓN</h3>
-              <p className="mb-6">Sesiones de grabación para solistas, bandas y proyectos musicales.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Grabación multipista</li>
-                <li>✓ Voces e instrumentos</li>
-                <li>✓ Técnico de sonido incluido</li>
-                <li>✓ Archivos en alta calidad</li>
-              </ul>
-            </div>
-
-            <div className="bg-purple-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">PRODUCCIÓN</h3>
-              <p className="mb-6">Servicios completos de producción musical y post-producción.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Mezcla profesional</li>
-                <li>✓ Masterización</li>
-                <li>✓ Arreglos musicales</li>
-                <li>✓ Asesoramiento creativo</li>
-              </ul>
-            </div>
-
-            <div className="bg-purple-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">ENSAYOS</h3>
-              <p className="mb-6">Espacio acondicionado para ensayos de bandas y músicos.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Amplificadores disponibles</li>
-                <li>✓ Batería básica</li>
-                <li>✓ Sistema de monitoreo</li>
-                <li>✓ Horarios flexibles</li>
-              </ul>
-            </div>
-
-            <div className="bg-purple-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">PODCASTS</h3>
-              <p className="mb-6">Grabación profesional de podcasts y contenido de audio.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Micrófonos de calidad</li>
-                <li>✓ Tratamiento acústico</li>
-                <li>✓ Edición incluida</li>
-                <li>✓ Formatos de distribución</li>
-              </ul>
-            </div>
+      {/* Services */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-14">
+            <span className="inline-block bg-prisma-purple/10 text-prisma-purple text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Servicios musicales</span>
+            <h2 className="text-display-lg text-prisma-charcoal">Crea tu música</h2>
           </div>
-
-          <button
-            onClick={scrollToContact}
-            className="bg-white text-purple-900 px-10 py-4 rounded-none font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
-          >
-            CONSULTA DISPONIBILIDAD
-          </button>
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((cat, i) => (
+              <div key={i} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow">
+                <h3 className="font-display font-bold text-prisma-charcoal text-lg mb-3">{cat.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{cat.desc}</p>
+                <ul className="space-y-2 text-gray-500 text-sm">
+                  {cat.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2"><span className="text-prisma-purple font-bold">✓</span> {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm accentColor="bg-prisma-purple" />
     </>
   );
 };

@@ -3,176 +3,96 @@ import { ArrowRight, Users, Lightbulb, Target, BookOpen, Coffee, Zap } from 'luc
 import SEOHead from '../components/SEOHead';
 import ContactForm from '../components/ContactForm';
 
-const WorkshopsPage: React.FC = () => {
-  const scrollToContact = () => {
-    const contactForm = document.getElementById('contact-form');
-    contactForm?.scrollIntoView({ behavior: 'smooth' });
-  };
+const features = [
+  { icon: Users, title: 'Grupos Íntimos', desc: 'Hasta 20 personas en formato círculo o 15 en dinámicas de taller para una experiencia cercana y personalizada.', color: 'bg-prisma-coral' },
+  { icon: Target, title: 'Proyección HD', desc: 'Sistema de proyección profesional y pantalla de gran formato para presentaciones impactantes.', color: 'bg-prisma-amber' },
+  { icon: Lightbulb, title: 'Iluminación Adaptable', desc: 'Control total de la iluminación para crear el ambiente perfecto según el tipo de actividad.', color: 'bg-prisma-navy' },
+  { icon: BookOpen, title: 'Material Didáctico', desc: 'Pizarras, flipcharts y material básico para dinámicas de grupo y sesiones interactivas.', color: 'bg-prisma-olive' },
+  { icon: Coffee, title: 'Coffee Break', desc: 'Zona de descanso con cocina equipada para pausas, networking y momentos de conexión.', color: 'bg-prisma-teal' },
+  { icon: Zap, title: 'Tecnología Integrada', desc: 'WiFi de alta velocidad, enchufes en todas las zonas y conectividad completa para todos los asistentes.', color: 'bg-prisma-coral' },
+];
 
+const sessions = [
+  { title: 'Masterclasses', desc: 'Sesiones íntimas con expertos en ambiente relajado.', items: ['Máximo 15 personas', 'Grabación opcional', 'Material de apoyo', 'Coffee break casero'], featured: false },
+  { title: 'Workshops Creativos', desc: 'Talleres hands-on en ambiente hogareño y creativo.', items: ['Dinámicas participativas', 'Máximo 12 personas', 'Material incluido', 'Ambiente relajado'], featured: true },
+  { title: 'Charlas Inspiracionales', desc: 'Charlas íntimas tipo living room talks con expertos.', items: ['Formato conversación', 'Q&A con audiencia', 'Máximo 20 personas', 'Ambiente de salón'], featured: false },
+  { title: 'Retiros Creativos', desc: 'Sesiones intensivas para equipos creativos.', items: ['Ambiente hogareño', 'Team building creativo', 'Comida casera disponible', 'Máximo 15 personas'], featured: false },
+];
+
+const WorkshopsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Workshops Barcelona - Casa Prisma Gràcia | Alquiler Sala Formación"
-        description="Alquila sala para workshops y formación en Gràcia, Barcelona. Loft de 175m² ideal para masterclasses, charlas, eventos educativos y sesiones de formación. Ambiente inspirador con tecnología integrada."
-        keywords="workshop Barcelona, sala formación Gràcia, masterclass Barcelona, charla Barcelona, evento educativo Barcelona, alquiler sala workshop, sala formación Barcelona, alquiler aula Barcelona, espacio formación Barcelona, sala conferencias Barcelona, alquiler sala charlas, workshop space Barcelona, training room Barcelona, seminar room Barcelona, educational space Barcelona, learning space Barcelona, presentation room Barcelona, conference room Barcelona, meeting space Barcelona, corporate training Barcelona, professional development Barcelona, skill workshop Barcelona, creative workshop Barcelona, business workshop Barcelona"
+        title="Alquiler Sala Workshops Barcelona — Talleres Creativos Gràcia | Casa Prisma"
+        description="Alquiler de sala para workshops y talleres creativos en Gràcia, Barcelona. Loft de 175m² con proyección HD, material didáctico y cocina equipada. Ideal para masterclasses, charlas, formaciones, retiros creativos y sesiones de grupo en un ambiente acogedor e inspirador."
+        keywords="sala talleres barcelona, espacio workshops, alquiler sala formación, masterclass barcelona, taller creativo barcelona, alquiler sala workshop gràcia, espacio formación barcelona, sala conferencias barcelona, charla inspiracional barcelona, retiro creativo barcelona, workshop arte barcelona, taller artistas barcelona, sala cursos barcelona, espacio educativo gràcia, formación profesional barcelona, team building creativo, alquiler aula barcelona, taller diseño barcelona, workshop fotografía barcelona, sala seminarios barcelona"
         canonical="https://casaprisma.com/workshops"
-        ogImage="/1302974676.webp"
+        ogImage="/workshop-corporativo.jpg"
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/1302974676.webp"
-            alt="Sala para workshops y formación en Gràcia"
-            className="w-full h-full object-cover opacity-70"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-blue-900/30"></div>
-        </div>
-
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none">
-            WORKSHOPS
-            <span className="block text-blue-400 italic font-light">& Formación</span>
-          </h1>
-          
-          <p className="text-xl md:text-3xl font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-            Un loft íntimo y acogedor, perfecto para sesiones creativas en grupo reducido
-          </p>
-
-          <button
-            onClick={scrollToContact}
-            className="bg-blue-500 text-white px-10 py-4 rounded-none font-bold text-lg hover:bg-blue-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-          >
-            RESERVA TU WORKSHOP
-          </button>
+      {/* Hero */}
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
+        <img src="/workshop-corporativo.jpg" alt="Workshop corporativo en Casa Prisma Gràcia Barcelona — sala para talleres y formaciones" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-prisma-coral/90 via-prisma-coral/40 to-transparent" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
+          <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Workshops y talleres</span>
+          <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">Aprende Creando</h1>
+          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-lg">Un loft íntimo de 175m² perfecto para masterclasses, talleres creativos y sesiones de formación en grupo reducido en Gràcia.</p>
+          <a href="#contact-form" className="group inline-flex items-center gap-3 bg-white text-prisma-coral px-8 py-4 rounded-full font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+            Reserva tu workshop <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Features */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              ESPACIO
-              <span className="block text-blue-500 italic font-light">educativo</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Ambiente acogedor diseñado para el aprendizaje y la conexión
-            </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-14">
+            <span className="inline-block bg-prisma-coral/10 text-prisma-coral text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Espacio educativo</span>
+            <h2 className="text-display-lg text-prisma-charcoal max-w-xl">Aprende en un entorno único</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Users className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Grupos Íntimos</h3>
-              <p className="text-gray-600">Hasta 20 personas en formato círculo o 15 en dinámicas de taller.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Target className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Proyección HD</h3>
-              <p className="text-gray-600">Sistema de proyección profesional y pantalla de gran formato.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Lightbulb className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Iluminación Adaptable</h3>
-              <p className="text-gray-600">Control total de la iluminación para crear el ambiente perfecto.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <BookOpen className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Material Didáctico</h3>
-              <p className="text-gray-600">Pizarras, flipcharts y material básico para dinámicas de grupo.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Coffee className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Coffee Break</h3>
-              <p className="text-gray-600">Zona de descanso con cocina equipada para pausas y networking.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Zap className="w-12 h-12 text-blue-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Tecnología Integrada</h3>
-              <p className="text-gray-600">WiFi de alta velocidad, enchufes y conectividad para todos.</p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={scrollToContact}
-              className="inline-flex items-center gap-3 bg-blue-500 text-white px-10 py-4 rounded-none font-bold text-lg hover:bg-blue-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-            >
-              RESERVA TU FORMACIÓN AHORA
-              <ArrowRight className="w-5 h-5" />
-            </button>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {features.map((f, i) => {
+              const Icon = f.icon;
+              return (
+                <div key={i} className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                  <div className={`w-12 h-12 ${f.color} rounded-full flex items-center justify-center mb-5`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-prisma-charcoal text-lg mb-2">{f.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{f.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Workshop Types */}
-      <section className="py-24 bg-blue-900 text-white">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black mb-12">TIPOS DE EVENTOS</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-blue-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">MASTERCLASSES</h3>
-              <p className="mb-6">Sesiones íntimas con expertos en ambiente relajado.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Máximo 15 personas</li>
-                <li>✓ Grabación opcional</li>
-                <li>✓ Material de apoyo</li>
-                <li>✓ Coffee break casero</li>
-              </ul>
-            </div>
-
-            <div className="bg-blue-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">WORKSHOPS CREATIVOS</h3>
-              <p className="mb-6">Talleres hands-on en ambiente hogareño y creativo.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Dinámicas participativas</li>
-                <li>✓ Máximo 12 personas</li>
-                <li>✓ Material incluido</li>
-                <li>✓ Ambiente relajado</li>
-              </ul>
-            </div>
-
-            <div className="bg-blue-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">CHARLAS INSPIRACIONALES</h3>
-              <p className="mb-6">Charlas íntimas tipo 'living room talks' con expertos.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Formato conversación</li>
-                <li>✓ Q&A con audiencia</li>
-                <li>✓ Máximo 20 personas</li>
-                <li>✓ Ambiente de salón</li>
-              </ul>
-            </div>
-
-            <div className="bg-blue-800/50 p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4">RETIROS CREATIVOS</h3>
-              <p className="mb-6">Sesiones intensivas para equipos creativos en ambiente relajado.</p>
-              <ul className="text-left space-y-2">
-                <li>✓ Ambiente hogareño</li>
-                <li>✓ Team building creativo</li>
-                <li>✓ Comida casera disponible</li>
-                <li>✓ Máximo 15 personas</li>
-              </ul>
-            </div>
+      {/* Sessions */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-14">
+            <span className="inline-block bg-prisma-coral/10 text-prisma-coral text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Formatos</span>
+            <h2 className="text-display-lg text-prisma-charcoal">Tipos de sesiones</h2>
           </div>
-
-          <button
-            onClick={scrollToContact}
-            className="bg-white text-blue-900 px-10 py-4 rounded-none font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105"
-          >
-            ORGANIZA TU SESIÓN CREATIVA
-          </button>
+          <div className="grid md:grid-cols-2 gap-6">
+            {sessions.map((cat, i) => (
+              <div key={i} className={`bg-white rounded-2xl p-8 ${cat.featured ? 'ring-2 ring-prisma-coral shadow-lg relative' : 'shadow-sm hover:shadow-md transition-shadow'}`}>
+                {cat.featured && <span className="absolute -top-3 left-6 bg-prisma-coral text-white px-4 py-1 text-xs font-semibold rounded-full">Popular</span>}
+                <h3 className="font-display font-bold text-prisma-charcoal text-lg mb-3">{cat.title}</h3>
+                <p className="text-gray-400 text-sm mb-4">{cat.desc}</p>
+                <ul className="space-y-2 text-gray-500 text-sm">
+                  {cat.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2"><span className="text-prisma-coral font-bold">✓</span> {item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm accentColor="bg-prisma-coral" />
     </>
   );
 };

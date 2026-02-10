@@ -1,84 +1,43 @@
 import React from 'react';
-import { ArrowDown, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 const Hero: React.FC = () => {
-  const scrollToContact = () => {
-    const contactForm = document.getElementById('contact-form');
-    contactForm?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/1302974712.webp"
-          alt="Lumen Loft Interior"
-          className="w-full h-full object-cover opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-green-900/30"></div>
-      </div>
+    <section className="relative h-full flex items-end overflow-hidden">
+      <img
+        src="/galeria-exposicion.jpg"
+        alt="Loft creativo de 175m² para alquiler en Gràcia, Barcelona — espacio para coworking, fotografía, filmaciones, arte y eventos"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/10" />
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 border border-green-400/30 rounded-full animate-pulse"></div>
-      <div className="absolute bottom-32 right-16 w-12 h-12 bg-green-400/20 rounded-full animate-bounce"></div>
-      <div className="absolute top-1/3 right-20 w-6 h-6 bg-white/20 rotate-45 animate-spin" style={{ animationDuration: '8s' }}></div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 tracking-tight leading-none">
-            CASA
-            <span className="block text-green-400 italic font-light">Prisma</span>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-12 lg:pb-20 pt-32">
+        <div className="animate-fade-up">
+          <h1 className="text-display-xl text-white mb-8">
+            Casa<br />Prisma
           </h1>
-          
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-12 h-px bg-green-400"></div>
-            <Sparkles className="w-6 h-6 text-green-400" />
-            <div className="w-12 h-px bg-green-400"></div>
+
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <div className="max-w-xl">
+              <p className="text-2xl lg:text-3xl text-white/90 font-light leading-snug mb-2">
+                175m² de loft versátil en Gràcia, Barcelona.
+              </p>
+              <p className="text-lg text-white/50 font-light">
+                Coworking · Fotografía · Filmaciones · Eventos · Arte
+              </p>
+            </div>
+
+            <div className="flex gap-4 items-center">
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }))}
+                className="group inline-flex items-center gap-3 bg-white text-prisma-charcoal px-10 py-5 rounded-full font-bold text-lg hover:scale-[1.03] transition-all duration-300"
+              >
+                Reservar <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </div>
         </div>
-        
-        <p className="text-xl md:text-3xl font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-          Donde los <span className="text-green-400 font-medium">creativos</span> encuentran su espacio.
-          <br />
-          <span className="text-lg opacity-80">Cowork • Música • Arte • Eventos en Gràcia</span>
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <button
-            onClick={scrollToContact}
-            className="group relative overflow-hidden bg-green-500 text-black px-10 py-4 rounded-none font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-          >
-            <span className="relative z-10">RESERVA TU ESPACIO</span>
-            <div className="absolute inset-0 bg-white transform translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-          </button>
-          
-          <button
-            onClick={scrollToAbout}
-            className="border-2 border-white text-white px-8 py-4 rounded-none font-medium hover:bg-white hover:text-black transition-all duration-300"
-          >
-            Descubre más
-          </button>
-        </div>
-
-        <div className="text-sm opacity-70">
-          📍 Gràcia, Barcelona
-        </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <button
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce hover:text-green-400 transition-colors duration-300"
-      >
-        <ArrowDown className="w-8 h-8" />
-      </button>
     </section>
   );
 };

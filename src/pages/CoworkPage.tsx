@@ -1,177 +1,94 @@
 import React from 'react';
-import { ArrowRight, Users, Wifi, Coffee, Sun, Zap } from 'lucide-react';
+import { ArrowRight, Users, Wifi, Coffee, Sun, Zap, MapPin } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import ContactForm from '../components/ContactForm';
 
 const CoworkPage: React.FC = () => {
-  const scrollToContact = () => {
-    const contactForm = document.getElementById('contact-form');
-    contactForm?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <>
       <SEOHead
-        title="Cowork Creativo Barcelona - Casa Prisma Gràcia | Alquiler Oficina"
-        description="Alquila espacio de cowork creativo en Gràcia, Barcelona. Loft de 175m² con luz natural, WiFi de alta velocidad, cocina equipada y ambiente inspirador para freelancers, startups y equipos creativos. Oficina compartida flexible."
-        keywords="cowork Barcelona, coworking Barcelona, oficina compartida Barcelona, espacio trabajo Barcelona, coworking Gràcia, oficina freelancer Barcelona, espacio creativo Barcelona, alquiler oficina Barcelona, oficina temporal Barcelona, espacio profesional Barcelona, sala reuniones Barcelona, oficina creativa Gràcia, cowork creativo Barcelona, espacio trabajo creativo, oficina flexible Barcelona, alquiler espacio trabajo, coworking space Barcelona, shared office Barcelona, creative office Barcelona, freelancer office Barcelona, startup office Barcelona, hot desk Barcelona, dedicated desk Barcelona, private office Barcelona, meeting room Barcelona, business center Barcelona, workspace Barcelona"
+        title="Coworking Creativo Barcelona — Alquiler Oficina Gràcia | Casa Prisma"
+        description="Espacio de coworking creativo en Gràcia, Barcelona. Loft de 175m² con luz natural, WiFi de alta velocidad y cocina equipada. Alquiler flexible por día, semana o mes para freelancers, startups y equipos creativos."
+        keywords="coworking barcelona, oficina compartida gràcia, espacio trabajo creativo, alquiler cowork barcelona, freelancer barcelona, startup office barcelona, cowork creativo barcelona, oficina flexible gràcia, hot desk barcelona, espacio coworking gràcia"
         canonical="https://casaprisma.com/cowork"
         ogImage="/1302974713.webp"
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/1302974713.webp"
-            alt="Espacio de cowork creativo en Gràcia"
-            className="w-full h-full object-cover opacity-70"
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-green-900/30"></div>
-        </div>
-
-        <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-          <h1 className="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none">
-            COWORK
-            <span className="block text-green-400 italic font-light">Creativo</span>
-          </h1>
-          
-          <p className="text-xl md:text-3xl font-light mb-8 max-w-3xl mx-auto leading-relaxed">
-            Tu oficina inspiradora en el corazón de <span className="text-green-400 font-medium">Gràcia</span>
-          </p>
-
-          <button
-            onClick={scrollToContact}
-            className="bg-green-500 text-black px-10 py-4 rounded-none font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-          >
-            RESERVA TU ESPACIO DE TRABAJO
-          </button>
+      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
+        <img src="/1302974713.webp" alt="Espacio de coworking creativo en Gràcia Barcelona — oficina compartida con luz natural" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-prisma-teal/90 via-prisma-teal/40 to-transparent" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
+          <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Coworking creativo</span>
+          <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">Tu oficina en Gràcia</h1>
+          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-lg">175m² de espacio compartido con luz natural y ambiente colaborativo en el barrio más creativo de Barcelona.</p>
+          <a href="#contact-form" className="group inline-flex items-center gap-3 bg-white text-prisma-teal px-8 py-4 rounded-full font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
+            Reservar <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              COWORK
-              <span className="block text-green-500 italic font-light">diferente</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Un espacio diseñado para potenciar tu creatividad y productividad
-            </p>
+      <section className="py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <span className="inline-block bg-prisma-teal/10 text-prisma-teal text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Espacio de trabajo</span>
+            <h2 className="text-display-lg text-prisma-charcoal max-w-xl">Un cowork diferente</h2>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Users className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Ambiente Colaborativo</h3>
-              <p className="text-gray-600">Espacio abierto que fomenta la creatividad y las conexiones entre profesionales.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Sun className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Luz Natural</h3>
-              <p className="text-gray-600">Grandes ventanales que inundan el espacio de luz natural durante todo el día.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Wifi className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">WiFi de Alta Velocidad</h3>
-              <p className="text-gray-600">Conexión de fibra óptica para que tu trabajo fluya sin interrupciones.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Coffee className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Coffee Corner</h3>
-              <p className="text-gray-600">Cocina equipada y zona de descanso para recargar energías.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Zap className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Flexibilidad Total</h3>
-              <p className="text-gray-600">Adapta el espacio según tus necesidades: individual, equipo o eventos.</p>
-            </div>
-
-            <div className="bg-gray-50 p-8 rounded-2xl hover:shadow-xl transition-all duration-300">
-              <Users className="w-12 h-12 text-green-500 mb-6" />
-              <h3 className="text-2xl font-bold mb-4">Comunidad Creativa</h3>
-              <p className="text-gray-600">Conecta con otros creativos, freelancers y emprendedores de Barcelona.</p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={scrollToContact}
-              className="inline-flex items-center gap-3 bg-green-500 text-black px-10 py-4 rounded-none font-bold text-lg hover:bg-green-400 transition-all duration-300 transform hover:scale-105 shadow-2xl"
-            >
-              RESERVA TU COWORK AHORA
-              <ArrowRight className="w-5 h-5" />
-            </button>
+          <div className="grid lg:grid-cols-3 gap-6">
+            {[
+              { icon: Users, title: 'Ambiente Colaborativo', desc: 'Espacio abierto que fomenta la creatividad y las conexiones entre profesionales creativos.', color: 'bg-prisma-teal' },
+              { icon: Sun, title: 'Luz Natural', desc: 'Grandes ventanales que inundan el espacio de luz natural durante todo el día.', color: 'bg-prisma-amber' },
+              { icon: Wifi, title: 'WiFi Alta Velocidad', desc: 'Conexión de fibra óptica para que tu trabajo fluya sin interrupciones.', color: 'bg-prisma-navy' },
+              { icon: Coffee, title: 'Coffee Corner', desc: 'Cocina equipada y zona de descanso para recargar energías entre reuniones.', color: 'bg-prisma-olive' },
+              { icon: Zap, title: 'Flexibilidad Total', desc: 'Adapta el espacio según tus necesidades: individual, equipo o eventos.', color: 'bg-prisma-teal' },
+              { icon: MapPin, title: 'Ubicación Premium', desc: 'En Gràcia, el barrio más creativo y bien conectado de Barcelona.', color: 'bg-prisma-amber' },
+            ].map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <div key={i} className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300">
+                  <div className={`w-12 h-12 ${b.color} rounded-full flex items-center justify-center mb-5`}>
+                    <Icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-prisma-charcoal text-lg mb-2">{b.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{b.desc}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-black mb-12">TARIFAS FLEXIBLES</h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">DÍA COMPLETO</h3>
-              <p className="text-4xl font-black text-green-500 mb-6">€60<span className="text-lg text-gray-500">/día</span></p>
-              <ul className="text-left space-y-2 mb-8">
-                <li>✓ Acceso 9:00 - 22:00</li>
-                <li>✓ WiFi alta velocidad</li>
-                <li>✓ Coffee corner</li>
-                <li>✓ Espacio flexible</li>
-              </ul>
-              <button onClick={scrollToContact} className="w-full bg-green-500 text-black py-3 font-bold hover:bg-green-400 transition-colors">
-                RESERVAR
-              </button>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg border-2 border-green-500">
-              <div className="bg-green-500 text-black px-4 py-1 rounded-full text-sm font-bold mb-4 inline-block">
-                MÁS POPULAR
+      <section className="py-28 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-16">
+            <span className="inline-block bg-prisma-teal/10 text-prisma-teal text-sm font-semibold px-4 py-1.5 rounded-full mb-4">Tarifas</span>
+            <h2 className="text-display-lg text-prisma-charcoal">Planes flexibles</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { name: 'Día Completo', price: '60€', unit: '/día', note: 'Acceso puntual', items: ['Acceso 9:00 – 22:00', 'WiFi alta velocidad', 'Coffee corner', 'Espacio flexible'], featured: false },
+              { name: 'Semanal', price: '250€', unit: '/semana', note: 'Ahorro de 25€/día', items: ['Acceso extendido 8:00–23:00', 'WiFi alta velocidad', 'Coffee corner', 'Espacio flexible', 'Llave personal'], featured: true },
+              { name: 'Mensual', price: '800€', unit: '/mes', note: 'Ahorro de 33€/día', items: ['Acceso extendido 8:00–23:00', 'WiFi alta velocidad', 'Coffee corner', 'Espacio flexible', 'Llave personal', 'Almacenamiento personal'], featured: false },
+            ].map((plan, i) => (
+              <div key={i} className={`bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow relative ${plan.featured ? 'ring-2 ring-prisma-teal' : ''}`}>
+                {plan.featured && <span className="absolute -top-3 left-6 bg-prisma-teal text-white px-4 py-1 text-xs font-semibold rounded-full">Más popular</span>}
+                <h3 className="font-display font-bold text-prisma-charcoal text-xl mb-4">{plan.name}</h3>
+                <p className="text-4xl font-display font-bold text-prisma-teal mb-1">{plan.price}<span className="text-base font-normal text-gray-400">{plan.unit}</span></p>
+                <p className="text-xs text-gray-400 mb-6">{plan.note}</p>
+                <ul className="space-y-3 mb-8 text-gray-500 text-sm">
+                  {plan.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2"><span className="text-prisma-teal font-bold">✓</span> {item}</li>
+                  ))}
+                </ul>
+                <a href="#contact-form" className={`block w-full text-center py-3 rounded-full font-semibold text-sm transition-all duration-300 ${plan.featured ? 'bg-prisma-teal text-white hover:shadow-lg hover:scale-[1.02]' : 'bg-gray-50 text-prisma-teal hover:bg-prisma-teal hover:text-white'}`}>
+                  Reservar
+                </a>
               </div>
-              <h3 className="text-2xl font-bold mb-4">SEMANAL</h3>
-              <p className="text-4xl font-black text-green-500 mb-2">€250<span className="text-lg text-gray-500">/semana</span></p>
-              <p className="text-sm text-gray-500 mb-6">€35/día (ahorro de €25/día)</p>
-              <ul className="text-left space-y-2 mb-8">
-                <li>✓ Acceso extendido 8:00-23:00</li>
-                <li>✓ WiFi alta velocidad</li>
-                <li>✓ Coffee corner</li>
-                <li>✓ Espacio flexible</li>
-                <li>✓ Llave personal</li>
-              </ul>
-              <button onClick={scrollToContact} className="w-full bg-green-500 text-black py-3 font-bold hover:bg-green-400 transition-colors">
-                RESERVAR
-              </button>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold mb-4">MENSUAL</h3>
-              <p className="text-4xl font-black text-green-500 mb-2">€800<span className="text-lg text-gray-500">/mes</span></p>
-              <p className="text-sm text-gray-500 mb-6">€27/día (ahorro de €33/día)</p>
-              <ul className="text-left space-y-2 mb-8">
-                <li>✓ Acceso extendido 8:00-23:00</li>
-                <li>✓ WiFi alta velocidad</li>
-                <li>✓ Coffee corner</li>
-                <li>✓ Espacio flexible</li>
-                <li>✓ Llave personal</li>
-                <li>✓ Almacenamiento personal</li>
-              </ul>
-              <button onClick={scrollToContact} className="w-full bg-green-500 text-black py-3 font-bold hover:bg-green-400 transition-colors">
-                RESERVAR
-              </button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm accentColor="bg-prisma-teal" />
     </>
   );
 };

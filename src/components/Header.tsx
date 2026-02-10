@@ -1,194 +1,133 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Zap } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const handleEspacioClick = () => {
     setIsMenuOpen(false);
+    if (location.pathname === '/') {
+      window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 1 } }));
+    } else {
+      navigate('/#about');
+    }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleReservarClick = (e: React.MouseEvent) => {
+    setIsMenuOpen(false);
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }));
+    }
+    // On other pages, the #contact-form anchor scrolls to the form naturally
   };
+
+  const navItems = [
+    { to: '/cowork', label: 'Coworking' },
+    { to: '/produccion', label: 'Fotografía' },
+    { to: '/galeria-arte', label: 'Galería' },
+    { to: '/eventos', label: 'Eventos' },
+    { to: '/estudio-musical', label: 'Estudio Musical' },
+    { to: '/workshops', label: 'Workshops' },
+  ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-      isScrolled ? 'bg-black/90 backdrop-blur-md shadow-2xl' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 bg-white ${isScrolled ? 'shadow-md' : ''}`}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
           <Link
             to="/"
-            className={`flex items-center gap-3 font-bold text-2xl transition-colors duration-300 ${
-              isScrolled ? 'text-white' : 'text-white'
-            }`}
+            onClick={(e) => {
+              if (location.pathname === '/') {
+                e.preventDefault();
+                window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 0 } }));
+              }
+            }}
+            className="flex items-center gap-3"
           >
-            <Zap className="w-8 h-8 text-green-400" />
-            CASA PRISMA
+            <img src="/logo-casaprisma.png" alt="Casa Prisma" className="h-9 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             <div className="relative group">
-              <button className={`font-bold transition-colors duration-300 hover:text-green-400 ${
-                isScrolled ? 'text-white' : 'text-white'
-              }`}>
-                SERVICIOS
+              <button className="text-sm font-medium text-prisma-charcoal hover:text-prisma-teal transition-colors">
+                Servicios
               </button>
-              <div className="absolute top-full left-0 mt-2 w-64 bg-black/95 backdrop-blur-md rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                <div className="py-4">
-                  <Link
-                    to="/cowork"
-                    onClick={() => window.location.href = '/cowork'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Cowork Creativo
-                  </Link>
-                  <Link
-                    to="/estudio-musical"
-                    onClick={() => window.location.href = '/estudio-musical'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Estudio Musical
-                  </Link>
-                  <Link
-                    to="/galeria-arte"
-                    onClick={() => window.location.href = '/galeria-arte'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Galería de Arte
-                  </Link>
-                  <Link
-                    to="/workshops"
-                    onClick={() => window.location.href = '/workshops'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Workshops
-                  </Link>
-                  <Link
-                    to="/eventos"
-                    onClick={() => window.location.href = '/eventos'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Eventos Boutique
-                  </Link>
-                  <Link
-                    to="/produccion"
-                    onClick={() => window.location.href = '/produccion'}
-                    className="block px-6 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-medium"
-                  >
-                    Producción Audiovisual
-                  </Link>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 bg-white rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100 overflow-hidden">
+                <div className="py-1">
+                  {navItems.map(item => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className="block px-5 py-2.5 text-sm text-prisma-charcoal hover:text-prisma-teal hover:bg-gray-50 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
-            <Link
-              to="/#about"
-              className={`font-bold transition-colors duration-300 hover:text-green-400 ${
-                isScrolled ? 'text-white' : 'text-white'
-              }`}
+            <button
+              onClick={handleEspacioClick}
+              className="text-sm font-medium text-prisma-charcoal hover:text-prisma-teal transition-colors"
             >
-              ESPACIO
-            </Link>
-            <Link
-              to="/#contact-form"
-              className="bg-green-500 text-black px-8 py-3 rounded-none font-black hover:bg-green-400 transition-all duration-300 transform hover:scale-105"
+              Espacio
+            </button>
+            <a
+              href="#contact-form"
+              onClick={handleReservarClick}
+              className="inline-flex items-center gap-2 bg-prisma-teal text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-prisma-teal-dark transition-colors"
             >
-              RESERVAR
-            </Link>
+              Reservar <ArrowRight className="w-4 h-4" />
+            </a>
           </nav>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden transition-colors duration-300 ${
-              isScrolled ? 'text-white' : 'text-white'
-            }`}
+            className="lg:hidden text-prisma-charcoal"
           >
-            {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-gray-800 shadow-2xl">
-            <nav className="py-6 space-y-4">
-              <div className="px-4 py-2">
-                <h3 className="text-green-400 font-bold text-sm uppercase tracking-wide mb-3">Servicios</h3>
-                <div className="space-y-2 ml-4">
-                  <Link
-                    to="/cowork"
-                    onClick={() => window.location.href = '/cowork'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Cowork Creativo
-                  </Link>
-                  <Link
-                    to="/estudio-musical"
-                    onClick={() => window.location.href = '/estudio-musical'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Estudio Musical
-                  </Link>
-                  <Link
-                    to="/galeria-arte"
-                    onClick={() => window.location.href = '/galeria-arte'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Galería de Arte
-                  </Link>
-                  <Link
-                    to="/workshops"
-                    onClick={() => window.location.href = '/workshops'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Workshops
-                  </Link>
-                  <Link
-                    to="/eventos"
-                    onClick={() => window.location.href = '/eventos'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Eventos Boutique
-                  </Link>
-                  <Link
-                    to="/produccion"
-                    onClick={() => window.location.href = '/produccion'}
-                    className="block text-white hover:text-green-400 transition-colors duration-200 font-medium"
-                  >
-                    Producción Audiovisual
-                  </Link>
-                </div>
+          <div className="lg:hidden fixed inset-0 top-16 bg-white z-50">
+            <nav className="flex flex-col items-start p-8 space-y-5">
+              {navItems.map(item => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-display text-2xl font-bold text-prisma-charcoal hover:text-prisma-teal transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
+              <button
+                onClick={handleEspacioClick}
+                className="font-display text-2xl font-bold text-prisma-charcoal hover:text-prisma-teal transition-colors"
+              >
+                Espacio
+              </button>
+              <div className="pt-6 w-full border-t border-gray-100">
+                <a
+                  href="#contact-form"
+                  onClick={handleReservarClick}
+                  className="inline-flex items-center gap-3 bg-prisma-teal text-white px-8 py-4 rounded-full text-sm font-semibold hover:bg-prisma-teal-dark transition-colors"
+                >
+                  Reservar espacio <ArrowRight className="w-4 h-4" />
+                </a>
               </div>
-              <Link
-                to="/#about"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left px-4 py-3 text-white hover:text-green-400 hover:bg-gray-800/50 transition-colors duration-200 font-bold"
-              >
-                ESPACIO
-              </Link>
-              <Link
-                to="/#contact-form"
-                onClick={() => setIsMenuOpen(false)}
-                className="block w-full text-left px-4 py-3 bg-green-500 text-black hover:bg-green-400 transition-colors duration-200 mx-4 rounded-none font-black"
-              >
-                RESERVAR
-              </Link>
             </nav>
           </div>
         )}
