@@ -79,11 +79,11 @@ const ContactForm: React.FC<ContactFormProps> = ({ accentColor }) => {
   const inputClass = "w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-prisma-charcoal focus:ring-2 focus:ring-prisma-teal/30 focus:border-prisma-teal transition-all text-base outline-none";
 
   return (
-    <section id="contact-form" className="py-10 lg:py-16 bg-gray-50 scroll-mt-20">
+    <section id="contact-form" className="pt-16 pb-10 lg:py-16 bg-gray-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Mobile compact header */}
-        <div className="lg:hidden mb-6">
-          <span className="inline-block bg-prisma-teal/10 text-prisma-teal text-sm font-semibold px-4 py-1.5 rounded-full mb-3">
+        <div className="lg:hidden mb-4">
+          <span className="inline-block bg-prisma-teal/10 text-prisma-teal text-sm font-semibold px-4 py-1.5 rounded-full mb-2">
             Contacto
           </span>
           <h2 className="text-display-md text-prisma-charcoal">Reserva tu espacio</h2>
