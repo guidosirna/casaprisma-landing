@@ -11,9 +11,9 @@ const SpaceGallery: React.FC = () => {
 
   return (
     <section className="h-full bg-white flex flex-col">
-      <div className="pt-16 lg:pt-20 pb-2 lg:pb-4 px-6 shrink-0">
+      <div className="pt-12 lg:pt-20 pb-2 lg:pb-4 px-6 shrink-0">
         <div className="max-w-[1600px] mx-auto">
-          <h2 className="reveal text-display-lg text-prisma-charcoal">El Espacio</h2>
+          <h2 className="reveal text-display-md lg:text-display-lg text-prisma-charcoal">El Espacio</h2>
         </div>
       </div>
 

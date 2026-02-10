@@ -26,9 +26,9 @@ const Uses: React.FC = () => {
 
   return (
     <section className="h-full bg-prisma-charcoal text-white overflow-hidden flex flex-col justify-center">
-      <div className="max-w-7xl mx-auto px-6 py-8 lg:py-16 w-full">
-        <div className="flex items-end justify-between mb-6 lg:mb-14">
-          <h2 className="reveal text-display-lg max-w-xl">
+      <div className="max-w-7xl mx-auto px-6 py-6 lg:py-16 w-full">
+        <div className="flex items-end justify-between mb-4 lg:mb-14">
+          <h2 className="reveal text-display-md lg:text-display-lg max-w-xl">
             Un espacio,<br />infinitas posibilidades
           </h2>
           <div className="hidden lg:flex gap-3">
@@ -44,7 +44,7 @@ const Uses: React.FC = () => {
 
       <div
         ref={scrollRef}
-        className="reveal reveal-delay-1 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-10 px-6 lg:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] scrollbar-hide"
+        className="reveal reveal-delay-1 flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 lg:pb-10 px-6 lg:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] scrollbar-hide"
       >
         {useCases.map((item, index) => (
           <Link
@@ -52,7 +52,7 @@ const Uses: React.FC = () => {
             to={item.link}
             className="group snap-start shrink-0 w-[85vw] sm:w-[380px] rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300"
           >
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-48 lg:h-64 overflow-hidden">
               <img
                 src={item.image}
                 alt={`${item.title} en Casa Prisma Barcelona — alquiler espacio creativo`}

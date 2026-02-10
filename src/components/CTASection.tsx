@@ -11,17 +11,17 @@ const CTASection: React.FC = () => {
       />
       <div className="absolute inset-0 bg-prisma-charcoal/80" />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 text-white w-full">
-        <h2 className="reveal text-display-lg mb-8 max-w-3xl">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 py-12 lg:py-24 text-white w-full">
+        <h2 className="reveal text-display-md lg:text-display-lg mb-6 lg:mb-8 max-w-3xl">
           Tu próximo proyecto merece un espacio excepcional
         </h2>
-        <p className="reveal reveal-delay-1 text-xl lg:text-2xl text-white/70 font-light leading-relaxed mb-12 max-w-2xl">
+        <p className="reveal reveal-delay-1 text-lg lg:text-2xl text-white/70 font-light leading-relaxed mb-8 lg:mb-12 max-w-2xl">
           Reserva Casa Prisma para fotografía, filmaciones, eventos, coworking o cualquier proyecto creativo en Barcelona.
         </p>
 
         <button
           onClick={() => window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }))}
-          className="reveal reveal-delay-2 group inline-flex items-center gap-4 bg-white text-prisma-charcoal px-12 py-6 rounded-full font-bold text-lg hover:scale-[1.03] transition-all duration-300"
+          className="reveal reveal-delay-2 group inline-flex items-center gap-3 lg:gap-4 bg-white text-prisma-charcoal px-8 py-4 lg:px-12 lg:py-6 rounded-full font-bold text-base lg:text-lg hover:scale-[1.03] transition-all duration-300"
         >
           Reservar ahora <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
         </button>

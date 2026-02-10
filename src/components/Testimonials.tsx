@@ -24,28 +24,28 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="h-full bg-white flex flex-col">
-      <div className="max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-8 lg:pb-12 w-full flex flex-col flex-1 justify-center">
-        <div className="mb-6 lg:mb-10">
-          <p className="reveal font-display text-2xl lg:text-4xl xl:text-5xl text-prisma-charcoal max-w-5xl leading-snug lg:leading-tight font-bold">
+      <div className="max-w-7xl mx-auto px-6 pt-14 lg:pt-32 pb-6 lg:pb-12 w-full flex flex-col flex-1 justify-center">
+        <div className="mb-4 lg:mb-10">
+          <p className="reveal font-display text-xl lg:text-4xl xl:text-5xl text-prisma-charcoal max-w-5xl leading-snug lg:leading-tight font-bold">
             &ldquo;{testimonials[0].content}&rdquo;
           </p>
-          <div className="reveal reveal-delay-1 flex items-center gap-4 mt-5 lg:mt-6">
-            <div className={`w-10 h-10 lg:w-12 lg:h-12 rounded-full ${testimonials[0].color} flex items-center justify-center text-white font-bold text-base lg:text-lg`}>
+          <div className="reveal reveal-delay-1 flex items-center gap-3 mt-4 lg:mt-6">
+            <div className={`w-9 h-9 lg:w-12 lg:h-12 rounded-full ${testimonials[0].color} flex items-center justify-center text-white font-bold text-sm lg:text-lg`}>
               {testimonials[0].name.charAt(0)}
             </div>
             <div>
-              <p className="font-display font-bold text-prisma-charcoal text-base lg:text-lg">{testimonials[0].name}</p>
-              <p className="text-gray-400 text-sm">{testimonials[0].role}</p>
+              <p className="font-display font-bold text-prisma-charcoal text-sm lg:text-lg">{testimonials[0].name}</p>
+              <p className="text-gray-400 text-xs lg:text-sm">{testimonials[0].role}</p>
             </div>
           </div>
         </div>
 
-        <div className="w-full h-px bg-gray-200 mb-6 lg:mb-10" />
+        <div className="w-full h-px bg-gray-200 mb-4 lg:mb-10" />
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-20">
+        <div className="grid md:grid-cols-2 gap-5 lg:gap-20">
           {testimonials.slice(1).map((t, index) => (
             <div key={index} className={`reveal reveal-delay-${index + 2}`}>
-              <p className="font-display text-lg lg:text-2xl text-prisma-charcoal font-medium leading-snug mb-4 lg:mb-6">
+              <p className="font-display text-base lg:text-2xl text-prisma-charcoal font-medium leading-snug mb-3 lg:mb-6">
                 &ldquo;{t.content}&rdquo;
               </p>
               <div className="flex items-center gap-3">

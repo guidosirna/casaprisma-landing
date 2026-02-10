@@ -12,37 +12,33 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section className="h-full bg-prisma-charcoal flex items-center" id="about">
-      <div className="max-w-7xl mx-auto px-6 py-16 w-full">
-        <h2 className="reveal text-display-lg text-white max-w-4xl">
-          Un loft de 175m² que se adapta a tu visión creativa.
+    <section className="h-full bg-prisma-charcoal flex flex-col justify-center" id="about">
+      <div className="max-w-7xl mx-auto px-6 py-10 lg:py-16 w-full">
+        <h2 className="reveal text-display-md lg:text-display-lg text-white max-w-4xl">
+          Un loft que se adapta a tu visión creativa.
           <span className="text-prisma-teal"> Gràcia, Barcelona.</span>
         </h2>
 
-        <div className="reveal reveal-delay-1 mt-12">
-          <p className="text-xl lg:text-2xl text-gray-400 leading-relaxed mb-10 max-w-3xl">
+        <div className="reveal reveal-delay-1 mt-6 lg:mt-12">
+          <p className="text-base lg:text-2xl text-gray-400 leading-relaxed mb-6 lg:mb-10 max-w-3xl">
             <strong className="text-white font-bold">Casa Prisma</strong> es un espacio
             multifuncional diseñado para artistas, fotógrafos, cineastas, coworkers y creativos.
             Grandes ventanales con luz natural, equipamiento profesional y una estética que se
             adapta a cualquier proyecto.
           </p>
 
-          <div className="flex flex-wrap gap-3 mb-10">
+          <div className="flex flex-wrap gap-2 lg:gap-3 mb-6 lg:mb-10">
             {services.map(({ icon: Icon, label, color }) => (
-              <div key={label} className={`inline-flex items-center gap-2 ${color} text-white px-5 py-2.5 rounded-full text-sm font-bold`}>
-                <Icon className="w-4 h-4" />
+              <div key={label} className={`inline-flex items-center gap-1.5 lg:gap-2 ${color} text-white px-3 lg:px-5 py-2 lg:py-2.5 rounded-full text-xs lg:text-sm font-bold`}>
+                <Icon className="w-3.5 h-3.5 lg:w-4 lg:h-4" />
                 {label}
               </div>
             ))}
           </div>
 
-          <div className="flex items-baseline gap-4">
-            <span className="font-display text-6xl lg:text-8xl font-bold text-prisma-teal">175</span>
-            <div>
-              <p className="font-display text-2xl lg:text-3xl font-bold text-white">m²</p>
-              <p className="text-gray-500 text-sm">de espacio creativo</p>
-            </div>
-          </div>
+          <p className="text-gray-500 text-sm lg:text-base">
+            <span className="text-prisma-teal font-bold">175m²</span> de espacio creativo en el corazón de Gràcia
+          </p>
         </div>
       </div>
     </section>
