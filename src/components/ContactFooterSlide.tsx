@@ -6,7 +6,7 @@ const ContactFooterSlide: React.FC = () => {
   return (
     <div className="min-h-full">
       {/* Top padding so content doesn't sit under the fixed header */}
-      <div className="pt-14 lg:pt-8">
+      <div className="pt-6 lg:pt-8">
         <ContactForm />
       </div>
 

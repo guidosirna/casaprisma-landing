@@ -24,7 +24,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <section className="h-full bg-white flex flex-col">
-      <div className="max-w-7xl mx-auto px-6 pt-14 lg:pt-32 pb-6 lg:pb-12 w-full flex flex-col flex-1 justify-center">
+      <div className="max-w-7xl mx-auto px-6 pt-20 lg:pt-32 pb-6 lg:pb-12 w-full flex flex-col flex-1 justify-center">
         <div className="mb-4 lg:mb-10">
           <p className="reveal font-display text-xl lg:text-4xl xl:text-5xl text-prisma-charcoal max-w-5xl leading-snug lg:leading-tight font-bold">
             &ldquo;{testimonials[0].content}&rdquo;
