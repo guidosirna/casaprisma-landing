@@ -79,7 +79,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ accentColor }) => {
   const inputClass = "w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-prisma-charcoal focus:ring-2 focus:ring-prisma-teal/30 focus:border-prisma-teal transition-all text-base outline-none";
 
   return (
-    <section id="contact-form" className="pt-16 pb-10 lg:py-16 bg-gray-50 scroll-mt-20">
+    <section id="contact-form" className="pt-20 pb-10 lg:py-16 bg-gray-50 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-6">
         {/* Mobile compact header */}
         <div className="lg:hidden mb-4">

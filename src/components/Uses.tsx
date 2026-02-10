@@ -28,7 +28,7 @@ const Uses: React.FC = () => {
     <section className="h-full bg-prisma-charcoal text-white overflow-hidden flex flex-col justify-center">
       <div className="max-w-7xl mx-auto px-6 py-6 lg:py-16 w-full">
         <div className="flex items-end justify-between mb-4 lg:mb-14">
-          <h2 className="reveal font-display text-3xl sm:text-4xl lg:text-display-lg font-bold tracking-tight max-w-xl">
+          <h2 className="reveal font-display text-4xl sm:text-5xl lg:text-display-lg font-bold tracking-tight max-w-xl">
             Un espacio,<br />infinitas posibilidades
           </h2>
           <div className="hidden lg:flex gap-3">

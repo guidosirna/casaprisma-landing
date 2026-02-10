@@ -12,7 +12,7 @@ const CTASection: React.FC = () => {
       <div className="absolute inset-0 bg-prisma-charcoal/80" />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-12 lg:py-24 text-white w-full">
-        <h2 className="reveal font-display text-3xl sm:text-4xl lg:text-display-lg font-bold tracking-tight mb-6 lg:mb-8 max-w-3xl">
+        <h2 className="reveal font-display text-4xl sm:text-5xl lg:text-display-lg font-bold tracking-tight mb-6 lg:mb-8 max-w-3xl">
           Tu próximo proyecto merece un espacio excepcional
         </h2>
         <p className="reveal reveal-delay-1 text-lg lg:text-2xl text-white/70 font-light leading-relaxed mb-8 lg:mb-12 max-w-2xl">
