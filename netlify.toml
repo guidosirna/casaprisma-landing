@@ -2,10 +2,6 @@
   command = "npm run build"
   publish = "dist"
 
-# Enable Netlify's prerendering for SEO bots (SPA needs this for proper crawling)
-[[plugins]]
-  package = "@netlify/plugin-prerender"
-
 # SPA fallback: serve index.html for all routes
 [[redirects]]
   from = "/*"
