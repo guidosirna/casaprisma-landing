@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  # Use Netlify's system Chromium instead of downloading Puppeteer's bundled one
+  PUPPETEER_SKIP_DOWNLOAD = "true"
+  PUPPETEER_EXECUTABLE_PATH = "/usr/bin/chromium-browser"
+
 # SPA fallback: serve index.html for all routes
 [[redirects]]
   from = "/*"
