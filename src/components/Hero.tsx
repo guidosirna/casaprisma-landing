@@ -5,7 +5,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-full flex items-end overflow-hidden">
       <img
-        src="/galeria-exposicion.jpg"
+        src="/1302974661.webp"
         alt="Loft creativo de 175m² para alquiler en Gràcia, Barcelona — espacio para coworking, fotografía, filmaciones, arte y eventos"
         className="absolute inset-0 w-full h-full object-cover"
       />
