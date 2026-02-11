@@ -12,25 +12,35 @@ import WorkshopsPage from './pages/WorkshopsPage';
 import EventsPage from './pages/EventsPage';
 import ArtGalleryPage from './pages/ArtGalleryPage';
 import ProductionPage from './pages/ProductionPage';
+import CommunityPage from './pages/CommunityPage';
+
+function MainLayout() {
+  return (
+    <div className="min-h-screen bg-prisma-cream">
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/cowork" element={<CoworkPage />} />
+        <Route path="/estudio-musical" element={<MusicStudioPage />} />
+        <Route path="/workshops" element={<WorkshopsPage />} />
+        <Route path="/eventos" element={<EventsPage />} />
+        <Route path="/galeria-arte" element={<ArtGalleryPage />} />
+        <Route path="/produccion" element={<ProductionPage />} />
+      </Routes>
+      <Footer />
+      <StickyBookButton />
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-prisma-cream">
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cowork" element={<CoworkPage />} />
-          <Route path="/estudio-musical" element={<MusicStudioPage />} />
-          <Route path="/workshops" element={<WorkshopsPage />} />
-          <Route path="/eventos" element={<EventsPage />} />
-          <Route path="/galeria-arte" element={<ArtGalleryPage />} />
-          <Route path="/produccion" element={<ProductionPage />} />
-        </Routes>
-        <Footer />
-        <StickyBookButton />
-      </div>
+      <Routes>
+        <Route path="/community" element={<CommunityPage />} />
+        <Route path="/*" element={<MainLayout />} />
+      </Routes>
     </Router>
   );
 }

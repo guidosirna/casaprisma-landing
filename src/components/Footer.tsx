@@ -38,6 +38,25 @@ const Footer: React.FC = () => {
             </nav>
           </div>
           <div>
+            <p className="text-sm font-medium text-white mb-4">Comunidad</p>
+            <nav className="space-y-2">
+              <Link
+                to="/community"
+                className="block text-gray-400 hover:text-prisma-amber transition-colors text-sm"
+              >
+                Casa Prisma Community
+              </Link>
+              <a
+                href="https://www.instagram.com/casaprismabcn"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-400 hover:text-prisma-teal transition-colors text-sm"
+              >
+                Instagram
+              </a>
+            </nav>
+          </div>
+          <div>
             <p className="text-sm font-medium text-white mb-4">Contacto</p>
             <div className="space-y-2 text-sm text-gray-400">
               <p>Gràcia, Barcelona</p>

@@ -83,6 +83,12 @@ const Header: React.FC = () => {
             >
               Espacio
             </button>
+            <Link
+              to="/community"
+              className="text-sm font-medium text-prisma-amber hover:text-prisma-amber-dark transition-colors"
+            >
+              Community
+            </Link>
             <a
               href="#contact-form"
               onClick={handleReservarClick}
@@ -119,6 +125,13 @@ const Header: React.FC = () => {
               >
                 Espacio
               </button>
+              <Link
+                to="/community"
+                onClick={() => setIsMenuOpen(false)}
+                className="font-display text-2xl font-bold text-prisma-amber hover:text-prisma-amber-dark transition-colors"
+              >
+                Community
+              </Link>
               <div className="pt-6 w-full border-t border-gray-100">
                 <a
                   href="#contact-form"
