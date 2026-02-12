@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Instagram } from 'lucide-react';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,13 +29,12 @@ const Header: React.FC = () => {
       e.preventDefault();
       window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }));
     }
-    // On other pages, the #contact-form anchor scrolls to the form naturally
   };
 
   const navItems = [
     { to: '/cowork', label: 'Coworking' },
     { to: '/produccion', label: 'Fotografía' },
-    { to: '/galeria-arte', label: 'Galería' },
+    { to: '/galeria-arte', label: 'Exposiciones' },
     { to: '/eventos', label: 'Eventos' },
     { to: '/estudio-musical', label: 'Estudio Musical' },
     { to: '/workshops', label: 'Workshops' },
@@ -55,7 +54,7 @@ const Header: React.FC = () => {
             }}
             className="flex items-center gap-3"
           >
-            <img src="/logo-casaprisma.png" alt="Casa Prisma" className="h-9 w-auto" />
+            <img src="/casaprisma-logo-light.png" alt="Casa Prisma" className="h-9 w-auto" />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6">
@@ -90,6 +89,15 @@ const Header: React.FC = () => {
               Community
             </Link>
             <a
+              href="https://www.instagram.com/casaprismabcn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-prisma-charcoal hover:text-pink-500 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a
               href="#contact-form"
               onClick={handleReservarClick}
               className="inline-flex items-center gap-2 bg-prisma-teal text-white px-6 py-3 rounded-full text-sm font-bold hover:bg-prisma-teal-dark transition-colors"
@@ -98,12 +106,23 @@ const Header: React.FC = () => {
             </a>
           </nav>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-prisma-charcoal"
-          >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4 lg:hidden">
+            <a
+              href="https://www.instagram.com/casaprismabcn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-prisma-charcoal hover:text-pink-500 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-prisma-charcoal"
+            >
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
 
         {isMenuOpen && (
@@ -132,6 +151,16 @@ const Header: React.FC = () => {
               >
                 Community
               </Link>
+              <a
+                href="https://www.instagram.com/casaprismabcn"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="inline-flex items-center gap-2 font-display text-2xl font-bold text-pink-500 hover:text-pink-600 transition-colors"
+              >
+                <Instagram className="w-6 h-6" />
+                Instagram
+              </a>
               <div className="pt-6 w-full border-t border-gray-100">
                 <a
                   href="#contact-form"

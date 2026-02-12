@@ -7,15 +7,15 @@ const CoworkPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Coworking Creativo Barcelona — Alquiler Oficina Gràcia | Casa Prisma"
+        title="Coworking Creativo Barcelona |Alquiler Oficina Gràcia | Casa Prisma"
         description="Espacio de coworking creativo en Gràcia, Barcelona. Loft de 175m² con luz natural, WiFi de alta velocidad y cocina equipada. Alquiler flexible por día, semana o mes para freelancers, startups y equipos creativos."
         keywords="coworking barcelona, oficina compartida gràcia, espacio trabajo creativo, alquiler cowork barcelona, freelancer barcelona, startup office barcelona, cowork creativo barcelona, oficina flexible gràcia, hot desk barcelona, espacio coworking gràcia"
         canonical="https://casaprisma.com/cowork"
-        ogImage="/1302974713.webp"
+        ogImage="/shots/coworking.jpg"
       />
 
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <img src="/1302974713.webp" alt="Espacio de coworking creativo en Gràcia Barcelona — oficina compartida con luz natural" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/shots/coworking.jpg" alt="Espacio de coworking creativo en Gràcia Barcelona |oficina compartida con luz natural" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-prisma-teal/90 via-prisma-teal/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Coworking creativo</span>

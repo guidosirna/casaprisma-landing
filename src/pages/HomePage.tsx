@@ -32,7 +32,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Casa Prisma — Alquiler Loft Creativo en Gràcia, Barcelona | Coworking, Fotografía, Arte, Eventos"
+        title="Casa Prisma |Alquiler Loft Creativo en Gràcia, Barcelona | Coworking, Fotografía, Arte, Eventos"
         description="Alquila Casa Prisma: loft creativo de 175m² en Gràcia, Barcelona. Espacio para coworking, sesiones fotográficas, filmaciones, exposiciones de arte y eventos privados. Luz natural, equipamiento profesional. Reserva ahora."
         keywords="alquiler espacio creativo Barcelona, coworking Gràcia Barcelona, estudio fotografía Barcelona, alquiler loft Barcelona, espacio eventos Barcelona, galería arte Barcelona, filmaciones Barcelona, producción audiovisual Barcelona, sala coworking Barcelona, espacio artistas Barcelona, alquiler sala eventos Barcelona, estudio fotográfico Barcelona, rodaje Barcelona, workshop Barcelona, espacio flexible Barcelona, oficina creativa Barcelona, alquiler por horas Barcelona, espacio multifuncional Gràcia"
         canonical="https://casaprisma.com"

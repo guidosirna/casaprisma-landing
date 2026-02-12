@@ -32,6 +32,7 @@ const FullpageSlides: React.FC<FullpageSlidesProps> = ({ children, onSlideChange
       isAnimating.current = true;
       setCurrent(clamped);
       onSlideChange?.(clamped);
+      window.dispatchEvent(new CustomEvent('fullpage-slide-changed', { detail: { currentSlide: clamped } }));
       setTimeout(() => { isAnimating.current = false; }, 900);
     },
     [current, total, onSlideChange, resetSlideScroll]

@@ -2,11 +2,11 @@ import React from 'react';
 
 const SpaceGallery: React.FC = () => {
   const images = [
-    { src: '/1302974712.webp', label: 'Loft principal' },
-    { src: '/1302974676.webp', label: 'Luz natural' },
-    { src: '/1302974713.webp', label: 'Cocina equipada' },
-    { src: '/1302974661.webp', label: 'Espacio versátil' },
-    { src: '/1302974711.webp', label: 'Terraza verde' },
+    { src: '/space/1302974712.webp', label: 'Loft principal' },
+    { src: '/space/1302974676.webp', label: 'Luz natural' },
+    { src: '/space/1302974713.webp', label: 'Cocina equipada' },
+    { src: '/space/1302974661.webp', label: 'Espacio versátil' },
+    { src: '/space/1302974711.webp', label: 'Terraza verde' },
   ];
 
   return (
@@ -23,7 +23,7 @@ const SpaceGallery: React.FC = () => {
             <div className="col-span-2 row-span-2 relative group overflow-hidden rounded-2xl reveal">
               <img
                 src={images[0].src}
-                alt={`${images[0].label} — Casa Prisma loft creativo Barcelona`}
+                alt={`${images[0].label} |Casa Prisma loft creativo Barcelona`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -31,7 +31,7 @@ const SpaceGallery: React.FC = () => {
               <div key={i} className={`relative group overflow-hidden rounded-2xl reveal reveal-delay-${Math.min(i + 1, 4)}`}>
                 <img
                   src={img.src}
-                  alt={`${img.label} — Casa Prisma espacio creativo Gràcia`}
+                  alt={`${img.label} |Casa Prisma espacio creativo Gràcia`}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -43,7 +43,7 @@ const SpaceGallery: React.FC = () => {
               <div key={i} className="snap-center shrink-0 w-[85vw] h-full relative overflow-hidden rounded-2xl">
                 <img
                   src={img.src}
-                  alt={`${img.label} — Casa Prisma Barcelona`}
+                  alt={`${img.label} |Casa Prisma Barcelona`}
                   className="w-full h-full object-cover"
                 />
               </div>

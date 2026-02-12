@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Instagram } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-start gap-12 mb-12">
           <div className="shrink-0">
-            <img src="/logo-casaprisma-white.png" alt="Casa Prisma" className="h-10 w-auto" />
+            <img src="/casaprisma-logo-dark.png" alt="Casa Prisma" className="h-10 w-auto" />
           </div>
           <p className="text-gray-400 text-sm leading-relaxed max-w-md">
             Loft creativo de 175m² en Gràcia, Barcelona. Espacio de alquiler para coworking,
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
               {[
                 { to: '/cowork', label: 'Coworking en Barcelona' },
                 { to: '/produccion', label: 'Estudio de fotografía' },
-                { to: '/galeria-arte', label: 'Galería de arte' },
+                { to: '/galeria-arte', label: 'Exposiciones' },
                 { to: '/eventos', label: 'Eventos privados' },
                 { to: '/estudio-musical', label: 'Estudio musical' },
                 { to: '/workshops', label: 'Workshops y talleres' },
@@ -50,9 +51,10 @@ const Footer: React.FC = () => {
                 href="https://www.instagram.com/casaprismabcn"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-gray-400 hover:text-prisma-teal transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-gray-400 hover:text-pink-400 transition-colors text-sm"
               >
-                Instagram
+                <Instagram className="w-4 h-4" />
+                @casaprismabcn
               </a>
             </nav>
           </div>

@@ -83,9 +83,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ accentColor }) => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Mobile compact header */}
         <div className="lg:hidden mb-4">
-          <span className="inline-block bg-prisma-teal/10 text-prisma-teal text-sm font-semibold px-4 py-1.5 rounded-full mb-2">
-            Contacto
-          </span>
           <h2 className="text-display-md text-prisma-charcoal">Reserva tu espacio</h2>
         </div>
 

@@ -23,16 +23,16 @@ const EventsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Alquiler Espacio Eventos Privados Barcelona — Loft Gràcia | Casa Prisma"
+        title="Alquiler Espacio Eventos Privados Barcelona |Loft Gràcia | Casa Prisma"
         description="Alquiler de loft para eventos privados en Gràcia, Barcelona. Espacio de 175m² ideal para cenas privadas, presentaciones de marca, celebraciones exclusivas, fiestas y eventos corporativos. Venue único con catering, decoración y coordinación incluidos."
         keywords="alquiler sala eventos barcelona, espacio eventos privados, venue barcelona, loft eventos gràcia, cena privada barcelona, presentación marca barcelona, alquiler espacio celebraciones, fiesta privada barcelona, evento corporativo gràcia, dinner party barcelona, alquiler loft eventos, venue exclusivo barcelona, sala celebraciones gràcia, evento boutique barcelona, cumpleaños barcelona loft, networking event barcelona, team building barcelona, cocktail party barcelona, lanzamiento producto barcelona, espacio fiestas barcelona"
         canonical="https://casaprisma.com/eventos"
-        ogImage="/evento-moda.jpg"
+        ogImage="/scenes/evento-moda.jpg"
       />
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <img src="/evento-moda.jpg" alt="Evento privado en Casa Prisma Gràcia Barcelona — loft para presentaciones y celebraciones exclusivas" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/scenes/evento-moda.jpg" alt="Evento privado en Casa Prisma Gràcia Barcelona |loft para presentaciones y celebraciones exclusivas" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-prisma-olive/90 via-prisma-olive/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Eventos privados</span>

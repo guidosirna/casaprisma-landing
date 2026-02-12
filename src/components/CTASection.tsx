@@ -5,7 +5,7 @@ const CTASection: React.FC = () => {
   return (
     <section className="h-full relative overflow-hidden flex items-center">
       <img
-        src="/galeria-arte.jpg"
+        src="/scenes/galeria-arte.jpg"
         alt="Casa Prisma espacio creativo Barcelona"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -19,12 +19,14 @@ const CTASection: React.FC = () => {
           Reserva Casa Prisma para fotografía, filmaciones, eventos, coworking o cualquier proyecto creativo en Barcelona.
         </p>
 
-        <button
-          onClick={() => window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }))}
-          className="reveal reveal-delay-2 group inline-flex items-center gap-3 lg:gap-4 bg-white text-prisma-charcoal px-8 py-4 lg:px-12 lg:py-6 rounded-full font-bold text-base lg:text-lg hover:scale-[1.03] transition-all duration-300"
-        >
-          Reservar ahora <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-        </button>
+        <div className="reveal reveal-delay-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }))}
+            className="group inline-flex items-center gap-3 lg:gap-4 bg-white text-prisma-charcoal px-8 py-4 lg:px-12 lg:py-6 rounded-full font-bold text-base lg:text-lg hover:scale-[1.03] transition-all duration-300"
+          >
+            Reservar ahora <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
       </div>
     </section>
   );

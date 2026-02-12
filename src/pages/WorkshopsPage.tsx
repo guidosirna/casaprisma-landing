@@ -23,16 +23,16 @@ const WorkshopsPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Alquiler Sala Workshops Barcelona — Talleres Creativos Gràcia | Casa Prisma"
+        title="Alquiler Sala Workshops Barcelona |Talleres Creativos Gràcia | Casa Prisma"
         description="Alquiler de sala para workshops y talleres creativos en Gràcia, Barcelona. Loft de 175m² con proyección HD, material didáctico y cocina equipada. Ideal para masterclasses, charlas, formaciones, retiros creativos y sesiones de grupo en un ambiente acogedor e inspirador."
         keywords="sala talleres barcelona, espacio workshops, alquiler sala formación, masterclass barcelona, taller creativo barcelona, alquiler sala workshop gràcia, espacio formación barcelona, sala conferencias barcelona, charla inspiracional barcelona, retiro creativo barcelona, workshop arte barcelona, taller artistas barcelona, sala cursos barcelona, espacio educativo gràcia, formación profesional barcelona, team building creativo, alquiler aula barcelona, taller diseño barcelona, workshop fotografía barcelona, sala seminarios barcelona"
         canonical="https://casaprisma.com/workshops"
-        ogImage="/workshop-corporativo.jpg"
+        ogImage="/scenes/workshop-corporativo.jpg"
       />
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <img src="/workshop-corporativo.jpg" alt="Workshop corporativo en Casa Prisma Gràcia Barcelona — sala para talleres y formaciones" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/scenes/workshop-corporativo.jpg" alt="Workshop corporativo en Casa Prisma Gràcia Barcelona |sala para talleres y formaciones" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-prisma-coral/90 via-prisma-coral/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Workshops y talleres</span>

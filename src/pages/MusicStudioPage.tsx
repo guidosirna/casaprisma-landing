@@ -23,16 +23,16 @@ const MusicStudioPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Estudio Musical Barcelona — Grabación y Producción Gràcia | Casa Prisma"
+        title="Estudio Musical Barcelona |Grabación y Producción Gràcia | Casa Prisma"
         description="Alquiler de estudio musical profesional en Gràcia, Barcelona. Espacio de 175m² con equipamiento de sonido profesional, grabación multipista y producción musical. Sala de ensayo, estudio de grabación y producción completo para músicos, bandas y productores."
         keywords="estudio grabación barcelona, producción musical barcelona, sala ensayo barcelona, estudio sonido gràcia, alquiler estudio musical, grabación profesional barcelona, mezcla mastering barcelona, estudio música gràcia, sala música barcelona, recording studio barcelona, music production barcelona, alquiler sala ensayo barcelona, estudio podcast barcelona, grabación multipista barcelona, productor musical barcelona, estudio audio profesional, sala grabación gràcia, estudio sonido barcelona, músicos barcelona estudio, banda ensayo barcelona"
         canonical="https://casaprisma.com/estudio-musical"
-        ogImage="/concierto-intimo.jpg"
+        ogImage="/shots/studio.jpg"
       />
 
       {/* Hero */}
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <img src="/concierto-intimo.jpg" alt="Concierto íntimo en Casa Prisma Gràcia Barcelona — sala para música en vivo y grabación" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/shots/studio.jpg" alt="Concierto íntimo en Casa Prisma Gràcia Barcelona |sala para música en vivo y grabación" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-prisma-purple/90 via-prisma-purple/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Estudio musical</span>

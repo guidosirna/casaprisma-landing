@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import StickyBookButton from './components/StickyBookButton';
+import CommunityCTA from './components/CommunityCTA';
 
 import HomePage from './pages/HomePage';
 import CoworkPage from './pages/CoworkPage';
@@ -15,6 +16,9 @@ import ProductionPage from './pages/ProductionPage';
 import CommunityPage from './pages/CommunityPage';
 
 function MainLayout() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
   return (
     <div className="min-h-screen bg-prisma-cream">
       <Header />
@@ -27,7 +31,8 @@ function MainLayout() {
         <Route path="/galeria-arte" element={<ArtGalleryPage />} />
         <Route path="/produccion" element={<ProductionPage />} />
       </Routes>
-      <Footer />
+      {!isHome && <CommunityCTA />}
+      {!isHome && <Footer />}
       <StickyBookButton />
     </div>
   );

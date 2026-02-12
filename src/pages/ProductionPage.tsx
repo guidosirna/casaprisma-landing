@@ -7,15 +7,15 @@ const ProductionPage: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="Estudio Fotografía y Filmaciones Barcelona — Alquiler Espacio | Casa Prisma"
+        title="Estudio Fotografía y Filmaciones Barcelona |Alquiler Espacio | Casa Prisma"
         description="Alquiler de estudio fotográfico y espacio para filmaciones en Gràcia, Barcelona. Loft de 175m² con luz natural, equipamiento profesional y set versátil. Ideal para sesiones de fotos, rodajes, producción audiovisual y contenido digital."
         keywords="estudio fotografía barcelona, alquiler estudio fotográfico, espacio filmaciones barcelona, rodaje barcelona, producción audiovisual, set de rodaje barcelona, sesión fotos barcelona, filming location barcelona, photo studio barcelona"
         canonical="https://casaprisma.com/produccion"
-        ogImage="/estudio-fotografia.jpg"
+        ogImage="/scenes/estudio-fotografia.jpg"
       />
 
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <img src="/estudio-fotografia.jpg" alt="Estudio de fotografía y filmaciones en Gràcia Barcelona — espacio profesional para rodajes y sesiones de fotos" className="absolute inset-0 w-full h-full object-cover" />
+        <img src="/scenes/estudio-fotografia.jpg" alt="Estudio de fotografía y filmaciones en Gràcia Barcelona |espacio profesional para rodajes y sesiones de fotos" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-prisma-amber/90 via-prisma-amber/40 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Producción</span>

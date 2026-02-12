@@ -1,24 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { Sparkles } from 'lucide-react';
+import React from 'react';
+import { MessageCircle } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const StickyBookButton: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const location = useLocation();
 
-  useEffect(() => {
-    const toggle = () => setIsVisible(window.pageYOffset > 400);
-    window.addEventListener('scroll', toggle);
-    return () => window.removeEventListener('scroll', toggle);
-  }, []);
+  const handleClick = (e: React.MouseEvent) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }));
+    }
+  };
 
   return (
     <a
       href="#contact-form"
-      className={`fixed bottom-6 right-6 z-50 bg-gradient-to-r from-prisma-teal to-prisma-navy text-white px-8 py-4 rounded-full font-display font-bold text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2 ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-16 opacity-0 pointer-events-none'
-      }`}
+      onClick={handleClick}
+      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20BA5A] text-white pl-5 pr-6 py-3.5 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center gap-2.5"
     >
-      <Sparkles className="w-4 h-4" />
-      Reservar
+      <MessageCircle className="w-5 h-5" />
+      Contáctanos
     </a>
   );
 };
