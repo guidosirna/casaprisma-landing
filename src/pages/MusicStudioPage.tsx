@@ -7,7 +7,7 @@ const features = [
   { icon: Mic, title: 'Microfonía Premium', desc: 'Micrófonos de condensador y dinámicos de alta gama para capturar voces e instrumentos con claridad.', color: 'bg-prisma-purple' },
   { icon: Headphones, title: 'Monitoreo Profesional', desc: 'Auriculares y monitores de estudio de referencia para mezcla y masterización precisa.', color: 'bg-prisma-amber' },
   { icon: Volume2, title: 'Sistema de Sonido', desc: 'Amplificadores y altavoces de alta fidelidad para reproducción y ensayos con sonido envolvente.', color: 'bg-prisma-navy' },
-  { icon: Radio, title: 'Mesa de Mezclas', desc: 'Consola digital con múltiples canales, efectos integrados y conectividad completa.', color: 'bg-prisma-olive' },
+  { icon: Radio, title: 'Interfaz de Audio', desc: 'Interfaz profesional de alta resolución con múltiples entradas y baja latencia para grabación multipista.', color: 'bg-prisma-olive' },
   { icon: Music, title: 'Instrumentos', desc: 'Piano digital, amplificadores de guitarra y percusión básica disponibles para tus sesiones.', color: 'bg-prisma-teal' },
   { icon: Zap, title: 'Software DAW', desc: 'Estaciones de trabajo digital con software profesional para grabación, edición y producción.', color: 'bg-prisma-purple' },
 ];
@@ -24,7 +24,7 @@ const MusicStudioPage: React.FC = () => {
     <>
       <SEOHead
         title="Estudio Musical Barcelona |Grabación y Producción Gràcia | Casa Prisma"
-        description="Alquiler de estudio musical profesional en Gràcia, Barcelona. Espacio de 175m² con equipamiento de sonido profesional, grabación multipista y producción musical. Sala de ensayo, estudio de grabación y producción completo para músicos, bandas y productores."
+        description="Alquiler de estudio musical profesional en Gràcia, Barcelona. Equipamiento de sonido profesional, grabación multipista y producción musical. Sala de ensayo, estudio de grabación y producción completo para músicos, bandas y productores."
         keywords="estudio grabación barcelona, producción musical barcelona, sala ensayo barcelona, estudio sonido gràcia, alquiler estudio musical, grabación profesional barcelona, mezcla mastering barcelona, estudio música gràcia, sala música barcelona, recording studio barcelona, music production barcelona, alquiler sala ensayo barcelona, estudio podcast barcelona, grabación multipista barcelona, productor musical barcelona, estudio audio profesional, sala grabación gràcia, estudio sonido barcelona, músicos barcelona estudio, banda ensayo barcelona"
         canonical="https://casaprisma.com/estudio-musical"
         ogImage="/shots/studio.jpg"
@@ -37,7 +37,7 @@ const MusicStudioPage: React.FC = () => {
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-16 lg:pb-24 pt-32">
           <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium mb-6">Estudio musical</span>
           <h1 className="font-display text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">Graba y Produce</h1>
-          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-lg">Estudio profesional de 175m² con equipamiento de alta calidad para grabación, producción y ensayos en el corazón de Gràcia.</p>
+          <p className="text-white/80 text-lg leading-relaxed mb-10 max-w-lg">Estudio profesional con equipamiento de alta calidad para grabación, producción y ensayos en el corazón de Gràcia.</p>
           <a href="#contact-form" className="group inline-flex items-center gap-3 bg-white text-prisma-purple px-8 py-4 rounded-full font-semibold text-sm hover:shadow-lg hover:scale-[1.02] transition-all duration-300">
             Reserva tu sesión <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
