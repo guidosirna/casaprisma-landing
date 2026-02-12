@@ -12,8 +12,8 @@ const Benefits: React.FC = () => {
   ];
 
   return (
-    <section className="h-full bg-gray-50 flex items-center">
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-8 lg:py-24 w-full">
+    <section className="h-full bg-gray-50 flex items-center pt-16">
+      <div className="max-w-7xl mx-auto px-6 py-6 lg:py-24 w-full">
         <h2 className="reveal font-display text-3xl sm:text-4xl lg:text-display-lg font-bold tracking-tight text-prisma-charcoal mb-4 lg:mb-16 max-w-2xl">
           Por qué elegir Casa Prisma
         </h2>
