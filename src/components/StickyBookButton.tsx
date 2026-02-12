@@ -8,7 +8,13 @@ const StickyBookButton: React.FC = () => {
   const handleClick = (e: React.MouseEvent) => {
     if (location.pathname === '/') {
       e.preventDefault();
-      window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }));
+      // If already on the contact slide, scroll to top of the slide (where the form is)
+      const contactSlide = document.querySelector('[data-slide="7"]') as HTMLElement | null;
+      if (contactSlide && contactSlide.classList.contains('overflow-y-auto')) {
+        contactSlide.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.dispatchEvent(new CustomEvent('fullpage-goto', { detail: { slide: 7 } }));
+      }
     }
   };
 
